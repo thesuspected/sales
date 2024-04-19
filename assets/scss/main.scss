@@ -2,9 +2,18 @@
 @tailwind components;
 @tailwind utilities;
 
+// Variables
+$shadow-default: 0 4px 20px 0 rgba(0, 0, 0, 0.05);
+
 // Defaults
 .max-container {
   max-width: 1240px;
+}
+
+.shadow-default {
+  -webkit-box-shadow: 0 4px 20px 0 rgba(0, 0, 0, 0.05);
+  -moz-box-shadow: 0 4px 20px 0 rgba(0, 0, 0, 0.05);
+  box-shadow: 0 4px 20px 0 rgba(0, 0, 0, 0.05);
 }
 
 // Card

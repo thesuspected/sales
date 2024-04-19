@@ -1,9 +1,10 @@
 <template>
-    <div class='accordion'>
-        <div class='item' v-for='(item, key) in items'>
+    <div class='accordion' ref='accordionRef'>
+        <div class='item' v-for='(item, key) in items' v-auto-animate>
             <div class='head' @click='updateModelValue(key)'>
                 <span class='title'>{{ item.title }}</span>
-                <img class='chevron' src='~/assets/icons/icon_chevron.svg' alt='' />
+                <img class='chevron' :class='{"rotate-90": modelValue === key}' src='~/assets/icons/icon_chevron.svg'
+                     alt='' />
             </div>
             <div v-if='modelValue === key' class='content'>
                 {{ item.content }}
@@ -13,6 +14,7 @@
 </template>
 
 <script setup lang='ts'>
+import { vAutoAnimate } from '@formkit/auto-animate'
 
 import type { PropType } from 'vue'
 
@@ -26,9 +28,15 @@ defineProps({
 })
 const emit = defineEmits(['update:model-value'])
 
+const accordionRef = ref()
+
 const updateModelValue = (key: number) => {
     emit('update:model-value', key)
 }
+
+// onMounted(() => {
+//     autoAnimate(accordionRef.value)
+// })
 </script>
 
 <style lang='scss' scoped>
@@ -42,6 +50,10 @@ const updateModelValue = (key: number) => {
     display: flex;
     flex-direction: column;
 
+    &:last-child .head {
+        padding-bottom: 0;
+    }
+
     .head {
         font-weight: 600;
         display: flex;
@@ -49,6 +61,10 @@ const updateModelValue = (key: number) => {
         align-items: center;
         cursor: pointer;
         padding: 10px 0;
+
+        .chevron {
+            transition: all .3s cubic-bezier(.25, .8, .5, 1);
+        }
     }
 
     .content {
@@ -56,7 +72,6 @@ const updateModelValue = (key: number) => {
         font-size: 12px;
         line-height: 18px;
         padding-bottom: 10px;
-        transition: all .3s cubic-bezier(.25, .8, .5, 1);
     }
 }
 </style>

@@ -19,8 +19,11 @@
                 <Button label='Оставить заявку на тренинг' />
             </div>
         </div>
-        <div class='bg-white card' style='height: 600px'>
-
+        <div class='bg-white card'>
+            <h3 class='size-30px text-center'>
+                Методы продаж
+            </h3>
+            <Accordion v-model='sellMethodsModel' :items='sellMethodsItems' />
         </div>
         <div class='bg-white card' style='height: 600px'>
 
@@ -34,6 +37,54 @@ import Button from '~/components/buttons/Button.vue'
 const chips = [
     '8 часов', '19 тем', 'Теория', 'Практика',
 ]
+
+const sellMethodsModel = ref(0)
+const sellMethodsItems = ref([
+    {
+        title: 'Что есть продажи?',
+        content: 'Для того, чтобы продавать, мы должны понимать, что такое продажи. На этом этапе мы будем погружаться в идеологию продаж и как они работают.',
+    },
+    {
+        title: 'Что вы продаете?',
+        content: 'Текст',
+    },
+    {
+        title: 'Целевая аудитория',
+        content: 'Текст',
+    },
+    {
+        title: 'Воронка продаж',
+        content: 'Текст',
+    },
+    {
+        title: 'Целевой этап воронки продаж',
+        content: 'Текст',
+    },
+    {
+        title: 'Ценное конечное предложение',
+        content: 'Текст',
+    },
+    {
+        title: 'Уникальное торговое предложение',
+        content: 'Текст',
+    },
+    {
+        title: 'Точки касаний',
+        content: 'Текст',
+    },
+    {
+        title: 'Метрики',
+        content: 'Текст',
+    },
+    {
+        title: 'Классификация клиентов',
+        content: 'Текст',
+    },
+    {
+        title: 'Таблица переговоров',
+        content: 'Текст',
+    },
+])
 </script>
 
 <style lang='scss' scoped>

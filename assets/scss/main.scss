@@ -1,0 +1,54 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+// Defaults
+.max-container {
+  max-width: 1240px;
+}
+
+// Card
+
+.card {
+  @apply rounded-default p-default gap-container;
+  display: flex;
+  flex-direction: column;
+}
+
+// Text
+.size-30px {
+  font-size: 30px;
+  font-weight: 600;
+}
+
+.size-20px {
+  font-size: 20px;
+  font-weight: 400;
+}
+
+// Fonts
+body {
+  font-family: "Inter Tight", sans-serif;
+  @apply text-base text-dark;
+}
+
+.unbounded {
+  font-family: "Unbounded", sans-serif;
+}
+
+@font-face {
+  font-family: 'Inter Tight', serif;
+  src: url(../fonts/InterTight-Italic.ttf) format('ttf');
+  font-style: italic;
+}
+
+@font-face {
+  font-family: 'Inter Tight', serif;
+  src: url(../fonts/InterTight.ttf) format('ttf');
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Unbounded', sans-serif;
+  src: url(../fonts/Unbounded.ttf) format('ttf');
+}

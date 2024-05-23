@@ -32,11 +32,13 @@ export default {
                 'container': '1.25rem', // 20px
             },
             padding: {
+                'small': '0.625rem', // 10px
                 'default': '1.25rem', // 20px
                 'container': '2.5rem', // 40px
                 'section': '5rem', // 80px
             },
             margin: {
+                'small': '0.625rem', // 10px
                 'default': '1.25rem', // 20px
                 'container': '2.5rem', // 40px
                 'section': '5rem', // 80px

@@ -1,6 +1,6 @@
 <template>
     <h2 class='unbounded text-5xl mb-default font-bold mt-section'>шаг 1</h2>
-    <div class='grid grid-cols-1 md:grid-cols-3 gap-container'>
+    <div class='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-container'>
         <div class='bg-primary card'>
             <div class='flex justify-center items-center gap-default text-white size-30px'>
                 <img src='~/assets/icons/step_thunder.svg' alt='' />
@@ -12,7 +12,7 @@
             </span>
             <div class='flex-grow' />
             <div>
-                <div class='flex justify-between flex-grow'>
+                <div class='flex justify-between flex-wrap'>
                     <div v-for='chip in chips' class='chip'>
                         {{ chip }}
                     </div>

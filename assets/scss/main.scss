@@ -48,17 +48,21 @@ body {
 
 @font-face {
   font-family: 'Inter Tight', serif;
-  src: url(../../public/fonts/InterTight-Italic.ttf) format('ttf');
+  src: url(../../public/fonts/InterTight-Italic.ttf) format('truetype');
   font-style: italic;
+  font-weight: normal;
 }
 
 @font-face {
   font-family: 'Inter Tight', serif;
-  src: url(../../public/fonts/InterTight.ttf) format('ttf');
+  src: url(../../public/fonts/InterTight.ttf) format('truetype');
   font-style: normal;
+  font-weight: normal;
 }
 
 @font-face {
   font-family: 'Unbounded', sans-serif;
-  src: url(../../public/fonts/Unbounded.ttf) format('ttf');
+  src: url(../../public/fonts/Unbounded.ttf) format('truetype');
+  font-style: normal;
+  font-weight: normal;
 }

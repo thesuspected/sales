@@ -17,7 +17,7 @@
                     <b class='text-primary'>Премиум</b> включает в себя все вышеперечисленное из базового пакета, прослушивание звонков с контролем качества и еженедельные онлайн-встречи с разбором ошибок на протяжении трех месяцев,
                     а также два тренинга по запросу на выбор:
                 </span>
-                <div class='flex gap-default mt-default flex-wrap'>
+                <div class='flex gap-default mt-default flex-wrap mb-default'>
                     <div v-for='(training, key) in trainings' :key='key' class='training'>
                         {{ training }}
                     </div>

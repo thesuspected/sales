@@ -38,7 +38,7 @@ $shadow-default: 0 4px 20px 0 rgba(0, 0, 0, 0.05);
 
 // Fonts
 body {
-  font-family: "Inter Tight", sans-serif;
+  font-family: 'Inter Tight', sans-serif;
   @apply text-base text-dark;
 }
 
@@ -51,6 +51,7 @@ body {
   src: url('~assets/fonts/InterTight-Italic.ttf') format('truetype');
   font-style: italic;
   font-weight: normal;
+  font-display: swap;
 }
 
 @font-face {
@@ -58,6 +59,7 @@ body {
   src: url('~assets/fonts/InterTight.ttf') format('truetype');
   font-style: normal;
   font-weight: normal;
+  font-display: swap;
 }
 
 @font-face {
@@ -65,4 +67,5 @@ body {
   src: url('~assets/fonts/Unbounded.ttf') format('truetype');
   font-style: normal;
   font-weight: normal;
+  font-display: swap;
 }

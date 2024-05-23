@@ -11,7 +11,7 @@
                 </span>
             </div>
             <div class='grid grid-cols-1 lg:grid-cols-3 gap-container'>
-                <div v-for='(card, key) in cards' :key='key' class='card bg-white'>
+                <div v-for='(card, key) in cards' :key='key' class='card bg-white shadow-default'>
                     <img :src='card.img' alt='' />
                     <h3 class='font-bold italic text-xl'>{{ card.title }}</h3>
                     <p class='text-pre-dark card-text'>{{ card.text }}</p>

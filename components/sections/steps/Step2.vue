@@ -3,7 +3,7 @@
         <div class='col-span-2 flex flex-col'>
             <h2 class='unbounded text-5xl mb-default font-bold'>шаг 2</h2>
             <div class='grid grid-cols-1 md:grid-cols-3 gap-container flex-grow'>
-                <div class='education-card card bg-white col-span-3 md:col-span-2'>
+                <div class='education-card card bg-white col-span-3 md:col-span-2 shadow-default'>
                     <div class='flex flex-col gap-default education-card-inner flex-grow'>
                         <div class='flex items-center gap-default text-primary size-30px'>
                             <img src='~/assets/icons/step_edu.svg' alt='' />
@@ -17,7 +17,7 @@
                     </div>
                 </div>
                 <div class='hidden md:block'>
-                    <div class='card bg-white month-card h-full'>
+                    <div class='card bg-white month-card h-full shadow-default'>
                         <div class='flex items-center justify-center gap-default size-30px mb-small'>
                             3 месяца
                         </div>
@@ -27,7 +27,7 @@
                     </div>
                 </div>
             </div>
-            <div class='timeline-card'>
+            <div class='timeline-card shadow-default'>
                 <div class='grid grid-cols-3 flex-grow'>
                     <div v-for='month in months' class='timeline-card-month'>{{ month }}</div>
                 </div>
@@ -36,7 +36,7 @@
         </div>
         <div class='mockup'>
             <img class='image' src='~/assets/images/mockup.png' alt='' />
-            <Button label='Оставить заявку на тренинг' primary />
+            <Button label='Оставить заявку на тренинг' primary class='shadow-default' />
         </div>
     </div>
 </template>

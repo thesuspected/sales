@@ -1,7 +1,7 @@
 <template>
     <h2 class='unbounded text-5xl mb-default font-bold mt-section'>шаг 3</h2>
     <div class='grid grid-cols-1 lg:grid-cols-3 gap-container'>
-        <div class='card bg-white'>
+        <div class='card bg-white shadow-default'>
             <div class='flex flex-col gap-default flex-grow'>
                 <div class='flex items-center gap-default text-primary size-30px'>
                     <img src='~/assets/icons/step_sound.svg' alt='' />
@@ -17,7 +17,8 @@
             </div>
         </div>
         <div class='flex flex-col justify-between gap-default'>
-            <div v-for='(card, key) in cards' :key='key' class='rounded-default flex items-center p-default gap-default'
+            <div v-for='(card, key) in cards' :key='key'
+                 class='rounded-default flex items-center p-default gap-default shadow-default'
                  :class='key === 0 ? "bg-primary text-white" : "bg-white"'>
                 <img :src='card.icon' alt=''>
                 <span>
@@ -25,7 +26,7 @@
                 </span>
             </div>
         </div>
-        <div class='flex flex-col'>
+        <div class='flex flex-col shadow-default'>
             <img src='~/assets/images/call.png' alt=''>
             <div class='rounded-default flex items-center p-default gap-default bg-white'>
                 <img src='/icons/team.svg' alt=''>

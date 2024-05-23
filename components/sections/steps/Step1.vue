@@ -1,7 +1,7 @@
 <template>
     <h2 class='unbounded text-5xl mb-default font-bold mt-section'>шаг 1</h2>
     <div class='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-container'>
-        <div class='bg-primary card'>
+        <div class='bg-primary card shadow-default'>
             <div class='flex justify-center items-center gap-default text-white size-30px'>
                 <img src='~/assets/icons/step_thunder.svg' alt='' />
                 Проводим тренинг
@@ -20,20 +20,20 @@
                 <Button label='Оставить заявку на тренинг' />
             </div>
         </div>
-        <div class='bg-white card'>
+        <div class='bg-white card shadow-default'>
             <h3 class='size-30px text-center'>
                 Методы продаж
             </h3>
             <Accordion v-model='sellMethodsModel' :items='sellMethodsItems' />
         </div>
         <div class='flex flex-col gap-container'>
-            <div class='bg-white card'>
+            <div class='bg-white card shadow-default'>
                 <h3 class='size-30px text-center'>
                     Инструменты продаж
                 </h3>
                 <Accordion v-model='sellToolsModel' :items='sellToolsItems' />
             </div>
-            <div class='bg-white card flex-grow'>
+            <div class='bg-white card flex-grow shadow-default'>
                 <h3 class='size-30px text-center'>
                     Доп. темы
                 </h3>

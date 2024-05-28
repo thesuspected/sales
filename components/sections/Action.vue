@@ -27,7 +27,7 @@
 import Container from '~/components/Container.vue'
 import Section from '~/components/Section.vue'
 import Button from '~/components/buttons/Button.vue'
-import { MaskInput } from 'vue-3-mask'
+import MaskInput from '~/components/mask/MaskInput.vue'
 import axios from 'axios'
 
 const phone = ref()

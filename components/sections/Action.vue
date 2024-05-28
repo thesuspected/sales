@@ -15,7 +15,7 @@
                             placeholder='+7 (987) 654-32-10'
                         />
                         <!--                        <input v-model='name' class='input' placeholder='Ваше Имя' />-->
-                        <Button label='Оставить заявку' primary />
+                        <Button label='Оставить заявку' primary @click='sendRequest' />
                     </div>
                 </div>
             </div>
@@ -28,9 +28,20 @@ import Container from '~/components/Container.vue'
 import Section from '~/components/Section.vue'
 import Button from '~/components/buttons/Button.vue'
 import { MaskInput } from 'vue-3-mask'
+import axios from 'axios'
 
 const phone = ref()
 const name = ref()
+
+const sendRequest = async () => {
+    if (phone) {
+        await axios.post(`https://api.telegram.org/botbot7193498527:AAFn9sfVKICmnpR85Z8cTuxsI0PVEKDpwig/sendMessage`, {
+            chat_id: -4230699745,
+            text: `Новая заявка на сайте от ${phone.value}`,
+            parse_mode: 'HTML',
+        })
+    }
+}
 </script>
 
 <style lang='scss' scoped>

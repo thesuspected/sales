@@ -5,6 +5,7 @@
     <Services class='py-container' />
     <Clients class='pt-container' />
     <Team />
+    <Action />
 </template>
 <script setup lang='ts'>
 import ForWho from '~/components/sections/ForWho.vue'
@@ -13,4 +14,5 @@ import Steps from '~/components/sections/Steps.vue'
 import Services from '~/components/sections/Services.vue'
 import Clients from '~/components/sections/Clients.vue'
 import Team from '~/components/sections/Team.vue'
+import Action from '~/components/sections/Action.vue'
 </script>

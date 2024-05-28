@@ -11,7 +11,6 @@
                 <div
                     class='flex-grow bg-white rounded-default shadow-default grid grid-cols-3 lg:grid-cols-2 gap-container overflow-hidden'>
                     <img alt='' :src='card.src' class='object-cover w-full h-full' />
-                    <!--                    <div class='flex flex-grow' :style='`background: url(${card.src})`'></div>-->
                     <div class='flex flex-col gap-default py-default col-span-2 lg:col-span-1'>
                         <h3 class='text-2xl font-bold'>{{ card.fullname }}</h3>
                         <span class='text-secondary text-xl font-light border-b border-grey pb-small'>

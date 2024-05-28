@@ -35,7 +35,7 @@ const name = ref()
 
 const sendRequest = async () => {
     if (phone) {
-        await axios.post(`https://api.telegram.org/botbot7193498527:AAFn9sfVKICmnpR85Z8cTuxsI0PVEKDpwig/sendMessage`, {
+        await axios.post(`https://api.telegram.org/bot7193498527:AAFn9sfVKICmnpR85Z8cTuxsI0PVEKDpwig/sendMessage`, {
             chat_id: -4230699745,
             text: `Новая заявка на сайте от ${phone.value}`,
             parse_mode: 'HTML',

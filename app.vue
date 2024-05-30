@@ -6,6 +6,7 @@
     <Clients class='pt-container' />
     <Team />
     <Action />
+    <Questions />
 </template>
 <script setup lang='ts'>
 import ForWho from '~/components/sections/ForWho.vue'
@@ -15,4 +16,5 @@ import Services from '~/components/sections/Services.vue'
 import Clients from '~/components/sections/Clients.vue'
 import Team from '~/components/sections/Team.vue'
 import Action from '~/components/sections/Action.vue'
+import Questions from '~/components/sections/Questions.vue'
 </script>

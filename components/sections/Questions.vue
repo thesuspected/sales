@@ -118,28 +118,28 @@
                     />
                 </q-step>
 
-                <q-step
-                    :name='7'
-                    title='Результат'
-                    :prefix='7'
-                    :done='!!form.result'
-                >
-                    <div class='text-xl font-bold px-small'>
-                        Какой результат хотите получить?
-                    </div>
-                    <q-input
-                        v-model='form.result'
-                        filled
-                        type='textarea'
-                        class='mt-small px-small'
-                        placeholder='Постарайтесь подробнее описать с чем возникают проблемы и каких улучшений вы ожидаете'
-                    />
-                </q-step>
+                <!--                <q-step-->
+                <!--                    :name='7'-->
+                <!--                    title='Результат'-->
+                <!--                    :prefix='7'-->
+                <!--                    :done='!!form.result'-->
+                <!--                >-->
+                <!--                    <div class='text-xl font-bold px-small'>-->
+                <!--                        Какой результат хотите получить?-->
+                <!--                    </div>-->
+                <!--                    <q-input-->
+                <!--                        v-model='form.result'-->
+                <!--                        filled-->
+                <!--                        type='textarea'-->
+                <!--                        class='mt-small px-small'-->
+                <!--                        placeholder='Постарайтесь подробнее описать с чем возникают проблемы и каких улучшений вы ожидаете'-->
+                <!--                    />-->
+                <!--                </q-step>-->
 
                 <q-step
-                    :name='8'
+                    :name='7'
                     title='Товар/Услуга'
-                    :prefix='8'
+                    :prefix='7'
                     :done='!!form.business'
                 >
                     <div class='text-xl font-bold px-small'>
@@ -154,9 +154,9 @@
                 </q-step>
 
                 <q-step
-                    :name='9'
+                    :name='8'
                     title='Сайт'
-                    :prefix='9'
+                    :prefix='8'
                     :done='!!form.site'
                 >
                     <div class='text-xl font-bold px-small'>
@@ -171,12 +171,14 @@
                 </q-step>
 
                 <template v-slot:navigation>
-                    <q-stepper-navigation class='flex justify-between'>
+                    <q-stepper-navigation class='flex justify-between sticky bottom-0 bg-white nav'>
                         <m-btn v-if='step > 1' outline color='primary' @click='$refs.stepper.previous()'
                                label='Назад' />
                         <q-space />
-                        <m-btn @click='$refs.stepper.next()' color='primary'
-                               :label="step === 4 ? 'Завершить' : 'Далее'" />
+                        <m-btn v-if='step < 8' @click='$refs.stepper.next()' color='primary'
+                               label='Далее' />
+                        <m-btn v-if='step === 8' @click='sendRequest' color='primary'
+                               label='Завершить' icon-right='check' />
                     </q-stepper-navigation>
                 </template>
             </q-stepper>
@@ -187,6 +189,7 @@
 <script setup lang='ts'>
 import { ref } from 'vue'
 import MBtn from '~/components/buttons/MBtn.vue'
+import axios from 'axios'
 
 const stepper = ref()
 const visible = ref(true)
@@ -198,7 +201,7 @@ const form = ref({
     analytic: undefined,
     system: undefined,
     business: undefined,
-    result: undefined,
+    // result: undefined,
     product: undefined,
     site: undefined,
 })
@@ -277,10 +280,33 @@ const defaultOptions = [
         value: 'Затрудняюсь ответить',
     },
 ]
+
+const sendRequest = async () => {
+    if (form.value) {
+        const formArray = Object.entries(form.value)
+        let text = 'Ответы на опрос:\n\n'
+        formArray.forEach((item, key) => {
+            text += `${key + 1}. ${item[1] ?? '-'}\n`
+        })
+        await axios.post(`https://api.telegram.org/bot7193498527:AAFn9sfVKICmnpR85Z8cTuxsI0PVEKDpwig/sendMessage`, {
+            chat_id: -4230699745,
+            text,
+            parse_mode: 'HTML',
+        })
+    }
+}
 </script>
 
 <style lang='scss' scoped>
 .dialog-card {
     border-radius: 0.625rem;
+}
+
+.nav {
+    padding-bottom: 1rem;
+}
+
+.q-stepper {
+    padding-bottom: 0;
 }
 </style>

@@ -8,6 +8,7 @@
                 header-class='font-medium'
                 header-nav
                 animated
+                vertical
             >
                 <q-step
                     :name='1'

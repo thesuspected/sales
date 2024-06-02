@@ -16,7 +16,7 @@
                     </span>
                     </div>
                 </div>
-                <div class='hidden md:block'>
+                <div class='hide md:block'>
                     <div class='card bg-white month-card h-full shadow-default'>
                         <div class='flex items-center justify-center gap-default size-30px mb-small'>
                             3 месяца
@@ -36,13 +36,14 @@
         </div>
         <div class='mockup'>
             <img class='image' src='~/assets/images/mockup.png' alt='' />
-            <Button label='Оставить заявку на тренинг' primary class='shadow-default' />
+            <m-btn label='Оставить заявку на тренинг' class='shadow-default' icon-right='arrow_forward' full-width
+                   large />
         </div>
     </div>
 </template>
 
 <script setup lang='ts'>
-import Button from '~/components/buttons/Button.vue'
+import MBtn from '~/components/buttons/MBtn.vue'
 
 const educationAdvantages = [
     'Обучение на платформе',
@@ -102,6 +103,16 @@ const months = [
         z-index: 1;
         bottom: 10px;
         width: calc(100% - 40px);
+    }
+}
+
+.hide {
+    display: none;
+}
+
+@media (min-width: 768px) {
+    .md\:block {
+        display: block;
     }
 }
 </style>

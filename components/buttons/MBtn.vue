@@ -5,6 +5,7 @@
         :size='size'
         :class="{
             'w-full': fullWidth,
+            large: large,
             capitalize: capitalize,
         }"
         :color='color'
@@ -66,6 +67,9 @@ const props = defineProps({
     capitalize: {
         type: Boolean,
     },
+    large: {
+        type: Boolean,
+    },
 })
 </script>
 
@@ -82,5 +86,11 @@ const props = defineProps({
     &:deep(.q-icon) {
         font-size: 1.515em;
     }
+}
+
+.large {
+    height: 56px;
+    padding-left: 30px;
+    padding-right: 30px;
 }
 </style>

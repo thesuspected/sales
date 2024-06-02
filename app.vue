@@ -1,12 +1,15 @@
 <template>
-    <ForWho class='pt-container' />
-    <Stats class='pb-container' />
-    <Steps class='py-container' />
-    <Services class='py-container' />
-    <Clients class='pt-container' />
-    <Team />
-    <Action />
-    <Questions />
+    <Layout>
+        <Main />
+        <ForWho class='pt-container bg-white' />
+        <Stats class='pb-container bg-white' id='numbers' />
+        <Steps class='py-container' />
+        <Services class='py-container' id='price' />
+        <Clients class='pt-container' id='clients' />
+        <Team id='team' />
+        <Action id='contacts' />
+        <Questions />
+    </Layout>
 </template>
 <script setup lang='ts'>
 import ForWho from '~/components/sections/ForWho.vue'
@@ -17,4 +20,6 @@ import Clients from '~/components/sections/Clients.vue'
 import Team from '~/components/sections/Team.vue'
 import Action from '~/components/sections/Action.vue'
 import Questions from '~/components/sections/Questions.vue'
+import Main from '~/components/sections/Main.vue'
+import Layout from '~/components/Layout.vue'
 </script>

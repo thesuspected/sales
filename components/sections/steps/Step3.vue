@@ -18,7 +18,7 @@
         </div>
         <div class='flex flex-col justify-between gap-default'>
             <div v-for='(card, key) in cards' :key='key'
-                 class='rounded-default flex items-center p-default gap-default shadow-default'
+                 class='rounded-default flex items-center flex-nowrap p-default gap-default shadow-default'
                  :class='key === 0 ? "bg-primary text-white" : "bg-white"'>
                 <img :src='card.icon' alt=''>
                 <span>
@@ -28,7 +28,7 @@
         </div>
         <div class='flex flex-col shadow-default'>
             <img src='~/assets/images/call.png' alt=''>
-            <div class='rounded-default flex items-center p-default gap-default bg-white'>
+            <div class='rounded-default flex items-center flex-nowrap p-default gap-default bg-white'>
                 <img src='/icons/team.svg' alt=''>
                 <span>
                     Организуем онлайн встречу с разбором допущенных ошибок

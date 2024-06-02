@@ -17,7 +17,7 @@
                         {{ chip }}
                     </div>
                 </div>
-                <Button label='Оставить заявку на тренинг' />
+                <m-btn label='Оставить заявку на тренинг' icon-right='arrow_forward' full-width large />
             </div>
         </div>
         <div class='bg-white card shadow-default'>
@@ -44,7 +44,7 @@
 </template>
 
 <script setup lang='ts'>
-import Button from '~/components/buttons/Button.vue'
+import MBtn from '~/components/buttons/MBtn.vue'
 
 const chips = [
     '8 часов', '19 тем', 'Теория', 'Практика',

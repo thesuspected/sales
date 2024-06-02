@@ -192,7 +192,7 @@ import MBtn from '~/components/buttons/MBtn.vue'
 import axios from 'axios'
 
 const stepper = ref()
-const visible = ref(true)
+const visible = ref(false)
 const step = ref(1)
 const form = ref({
     employeeCount: 20,

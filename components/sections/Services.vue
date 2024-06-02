@@ -41,7 +41,7 @@
                         </div>
                     </div>
                     <span class='h-[24px] text-center text-primary font-bold mb-small'>{{ card.aboveButton }}</span>
-                    <Button label='Оставить заявку' primary />
+                    <m-btn label='Оставить заявку' icon-right='arrow_forward' full-width large />
                 </div>
             </div>
         </Container>
@@ -51,7 +51,7 @@
 <script setup lang='ts'>
 import Section from '~/components/Section.vue'
 import Container from '~/components/Container.vue'
-import Button from '~/components/buttons/Button.vue'
+import MBtn from '~/components/buttons/MBtn.vue'
 
 const trainings = [
     'Личная эффективность', 'Командообразование', 'Эмоциональная разгрузка',

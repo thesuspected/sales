@@ -15,7 +15,8 @@
                             placeholder='+7 (987) 654-32-10'
                         />
                         <input v-model='name' class='input' placeholder='Ваше Имя' />
-                        <Button label='Оставить заявку' primary @click='sendRequest' />
+                        <m-btn label='Оставить заявку' full-width large
+                               @click='sendRequest' />
                     </div>
                 </div>
             </div>
@@ -26,9 +27,9 @@
 <script setup lang='ts'>
 import Container from '~/components/Container.vue'
 import Section from '~/components/Section.vue'
-import Button from '~/components/buttons/Button.vue'
 import MaskInput from '~/components/mask/MaskInput.vue'
 import axios from 'axios'
+import MBtn from '~/components/buttons/MBtn.vue'
 
 const phone = ref()
 const name = ref()

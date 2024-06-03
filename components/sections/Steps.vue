@@ -4,7 +4,7 @@
             <div class='flex flex-col'>
                 <h1 class='title unbounded font-bold text-4xl md:text-5xl text-center mx-auto'>
                     Как мы увеличиваем<br> <span class='text-primary'>показатели продаж</span>
-                    <img src='/svg/picture_question.svg' alt='' class='title-picture hidden md:block' />
+                    <img src='/svg/picture_question.svg' alt='' class='title-picture hide md:block' />
                 </h1>
                 <span class='uppercase text-pre-dark font-light text-center mx-auto pt-default'>
                     Для этого существует
@@ -35,6 +35,16 @@ import Step3 from '~/components/sections/steps/Step3.vue'
         position: absolute;
         left: 100%;
         top: -10px;
+    }
+}
+
+.hide {
+    display: none;
+}
+
+@media (min-width: 768px) {
+    .md\:block {
+        display: block;
     }
 }
 </style>

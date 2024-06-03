@@ -3,7 +3,7 @@
         <Container class='main-container'>
             <div class='grid grid-cols-1 lg:grid-cols-2 main items-center lg:py-container'>
                 <div class='order-last lg:order-first'>
-                    <h1 class='unbounded text-5xl md:main-title font-bold mb-default lg:mb-container'>Отдел<br>продаж
+                    <h1 class='unbounded text-5xl md:text-6xl font-bold mb-default lg:mb-container'>Отдел<br>продаж
                         2.0</h1>
                     <p class='lg:text-xl'>Наша задача — прокачать отдел продаж, внедрив необходимые инструменты
                         и передать
@@ -27,13 +27,6 @@ import MBtn from '~/components/buttons/MBtn.vue'
 
 <style lang='scss' scoped>
 .main {
-    //padding: 100px 0;
-
-    &-title {
-        line-height: 1;
-        font-size: 64px;
-    }
-
     &-container {
         padding-top: 0;
     }

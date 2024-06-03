@@ -17,7 +17,8 @@
                         {{ chip }}
                     </div>
                 </div>
-                <m-btn label='Оставить заявку на тренинг' icon-right='arrow_forward' full-width large />
+                <m-btn label='Оставить заявку на тренинг' icon-right='arrow_forward' color='white' text-color='primary'
+                       full-width large />
             </div>
         </div>
         <div class='bg-white card shadow-default'>

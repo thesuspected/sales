@@ -12,7 +12,10 @@
             </Headline>
             <div class='grid grid-cols-1 lg:grid-cols-2 gap-container'>
                 <div class='big-stat'>
-                    <!--     TODO: График + текст         -->
+                    <img src='/images/chart.png' alt='' />
+                    <div class='mt-small text-center'>После прохождения обучения ваши сотрудники качественно увеличат
+                        показатели, а обратная связь по звонкам закрепит их результаты
+                    </div>
                 </div>
                 <div class='grid grid-cols-2 gap-container'>
                     <div class='stat' v-for='stat in stats'>
@@ -52,7 +55,8 @@ const stats = [
 
 <style lang='scss' scoped>
 .big-stat {
-    @apply bg-light rounded-default;
+    @apply rounded-default border-grey border py-default px-small;
+    overflow: hidden;
 }
 
 .stat {

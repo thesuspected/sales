@@ -3,14 +3,16 @@
 
         <q-header reveal class='bg-light text-dark'>
             <Container class='flex justify-between items-center header header'>
-                <h1 class='text-xl font-bold'>Логотип</h1>
+                <h1 class='text-xl font-bold'>Продажи 2.0</h1>
                 <div class='gap-container hide md:flex'>
                     <span class='link' v-for='(link, key) in links' :key='key'
                           @click='scrollToElementById(link.to)'>{{ link.label
                         }}</span>
                 </div>
                 <div>
-                    <m-btn label='+7 (987) 654-32-10' outline />
+                    <a href='tel:+79869864306'>
+                        <m-btn label='+7 (986) 986-43-06' outline />
+                    </a>
                     <q-btn class='ml-small md:hide' flat round icon='menu'
                            @click='drawerVisible = !drawerVisible' />
                 </div>
@@ -19,7 +21,9 @@
 
         <q-drawer v-model='drawerVisible' side='right' overlay>
             <div class='py-[12px] px-5 flex justify-end'>
-                <m-btn label='+7 (987) 654-32-10' outline />
+                <a href='tel:+79869864306'>
+                    <m-btn label='+7 (986) 986-43-06' outline />
+                </a>
                 <q-btn class='ml-small md:hide' flat round icon='menu'
                        @click='drawerVisible = !drawerVisible' />
             </div>

@@ -45,6 +45,7 @@
 <script setup lang='ts'>
 import { nextTick, ref } from 'vue'
 import MBtn from '~/components/buttons/MBtn.vue'
+import { debounce } from 'lodash'
 
 const quasar = useQuasar()
 const drawerVisible = ref(false)
@@ -60,12 +61,12 @@ const scrollFromDrawer = (id: string) => {
     drawerVisible.value = false
     scrollToElementById(id)
 }
-const copyPhoneNumber = () => {
+const copyPhoneNumber = debounce(() => {
     navigator.clipboard.writeText('+7 (986) 986-43-06')
     quasar.notify({
         message: 'Номер телефона скопирован',
     })
-}
+}, 300)
 
 const links = [
     {

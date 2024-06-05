@@ -13,7 +13,7 @@
                         <m-btn label='Записаться на презентацию' outline large />
                     </div>
                 </div>
-                <img class='justify-self-center w-full lg:px-container' src='/svg/sales-boat.svg' alt=''>
+                <img class='justify-self-center w-full lg:px-container' src='/svg/main-picture.svg' alt=''>
             </div>
         </Container>
     </Section>

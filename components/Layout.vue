@@ -11,7 +11,7 @@
                 </div>
                 <div>
                     <a href='tel:+79869864306'>
-                        <m-btn label='+7 (986) 986-43-06' outline />
+                        <m-btn v-touch-hold:300.mouse='copyPhoneNumber' label='+7 (986) 986-43-06' outline />
                     </a>
                     <q-btn class='ml-small md:hide' flat round icon='menu'
                            @click='drawerVisible = !drawerVisible' />
@@ -22,7 +22,7 @@
         <q-drawer v-model='drawerVisible' side='right' overlay>
             <div class='py-[12px] px-5 flex justify-end'>
                 <a href='tel:+79869864306'>
-                    <m-btn label='+7 (986) 986-43-06' outline />
+                    <m-btn v-touch-hold:300.mouse='copyPhoneNumber' label='+7 (986) 986-43-06' outline />
                 </a>
                 <q-btn class='ml-small md:hide' flat round icon='menu'
                        @click='drawerVisible = !drawerVisible' />
@@ -46,6 +46,7 @@
 import { nextTick, ref } from 'vue'
 import MBtn from '~/components/buttons/MBtn.vue'
 
+const quasar = useQuasar()
 const drawerVisible = ref(false)
 
 const scrollToElementById = async (id: string) => {
@@ -58,6 +59,12 @@ const scrollToElementById = async (id: string) => {
 const scrollFromDrawer = (id: string) => {
     drawerVisible.value = false
     scrollToElementById(id)
+}
+const copyPhoneNumber = () => {
+    navigator.clipboard.writeText('+7 (986) 986-43-06')
+    quasar.notify({
+        message: 'Номер телефона скопирован',
+    })
 }
 
 const links = [

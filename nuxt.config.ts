@@ -24,6 +24,7 @@ export default defineNuxtConfig({
                 'black': '#2B2D33',
             },
         },
+        plugins: ['Notify'],
     }]],
     css: ['~/assets/scss/main.scss'],
     postcss: {

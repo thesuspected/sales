@@ -2,7 +2,7 @@
     <q-layout view="hHh lpR fFf">
         <q-header reveal class="bg-light text-dark">
             <Container class="flex justify-between items-center header header">
-                <h1 class="text-xl font-bold">Продажи 2.0</h1>
+                <h1 class="text-xl font-bold unbounded">Sales Twice</h1>
                 <div class="gap-container hide md:flex">
                     <span class="link" v-for="(link, key) in links" :key="key" @click="scrollToElementById(link.to)">
                         {{ link.label }}

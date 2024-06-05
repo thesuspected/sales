@@ -24,7 +24,7 @@
             </Container>
         </q-header>
 
-        <q-drawer v-model="drawerVisible" side="right" overlay width="260">
+        <q-drawer v-model="drawerVisible" side="right" overlay :width="260">
             <div class="py-3 pr-5 mr-[-10px] flex justify-end">
                 <a href="tel:+79869864306">
                     <m-btn v-touch-hold:300.mouse="copyPhoneNumber" label="+7 (986) 986-43-06" outline />
@@ -58,7 +58,6 @@
 <script setup lang="ts">
 import { nextTick, ref } from 'vue'
 import MBtn from '~/components/buttons/MBtn.vue'
-import { debounce } from 'lodash'
 import Socials from '~/components/utils/Socials.vue'
 
 const quasar = useQuasar()
@@ -75,12 +74,12 @@ const scrollFromDrawer = (id: string) => {
     drawerVisible.value = false
     scrollToElementById(id)
 }
-const copyPhoneNumber = debounce(() => {
+const copyPhoneNumber = () => {
     navigator.clipboard.writeText('+7 (986) 986-43-06')
     quasar.notify({
         message: 'Номер телефона скопирован',
     })
-}, 300)
+}
 
 const links = [
     {

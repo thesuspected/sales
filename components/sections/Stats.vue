@@ -3,24 +3,27 @@
         <Container>
             <Headline>
                 <template #title>
-                    Несколько цифр<br> о нашей работе
+                    Несколько цифр<br />
+                    о нашей работе
                 </template>
                 <template #subtitle>
-                    Гарантировано увеличим продажи за три месяца<br> обучения минимум на 20% за счет внедрения<br>
+                    Гарантировано увеличим продажи за три месяца<br />
+                    обучения минимум на 20% за счет внедрения<br />
                     методов и стратегий продаж.
                 </template>
             </Headline>
-            <div class='grid grid-cols-1 lg:grid-cols-2 gap-container'>
-                <div class='big-stat'>
-                    <img src='/images/chart.png' alt='' />
-                    <div class='mt-small text-center'>После прохождения обучения ваши сотрудники качественно увеличат
-                        показатели, а обратная связь по звонкам закрепит их результаты
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-container">
+                <div class="big-stat">
+                    <img src="/images/chart.png" alt="" />
+                    <div class="mt-small text-center">
+                        После прохождения обучения ваши сотрудники качественно увеличат показатели, а обратная связь по
+                        звонкам закрепит их результаты
                     </div>
                 </div>
-                <div class='grid grid-cols-2 gap-container'>
-                    <div class='stat' v-for='stat in stats'>
-                        <span class='font-bold text-5xl sm:text-6xl text-primary' v-html='stat.name' />
-                        <span v-html='stat.value' />
+                <div class="grid grid-cols-2 gap-container">
+                    <div class="stat" v-for="stat in stats">
+                        <span class="font-bold text-5xl sm:text-6xl text-primary" v-html="stat.name" />
+                        <span v-html="stat.value" />
                     </div>
                 </div>
             </div>
@@ -28,7 +31,7 @@
     </Section>
 </template>
 
-<script setup lang='ts'>
+<script setup lang="ts">
 import Section from '~/components/Section.vue'
 import Container from '~/components/Container.vue'
 import Headline from '~/components/Headline.vue'
@@ -53,7 +56,7 @@ const stats = [
 ]
 </script>
 
-<style lang='scss' scoped>
+<style lang="scss" scoped>
 .big-stat {
     @apply rounded-default border-grey border py-default px-small;
     overflow: hidden;

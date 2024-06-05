@@ -1,51 +1,65 @@
 <template>
-    <q-layout view='hHh lpR fFf'>
-
-        <q-header reveal class='bg-light text-dark'>
-            <Container class='flex justify-between items-center header header'>
-                <h1 class='text-xl font-bold'>Продажи 2.0</h1>
-                <div class='gap-container hide md:flex'>
-                    <span class='link' v-for='(link, key) in links' :key='key'
-                          @click='scrollToElementById(link.to)'>{{ link.label
-                        }}</span>
+    <q-layout view="hHh lpR fFf">
+        <q-header reveal class="bg-light text-dark">
+            <Container class="flex justify-between items-center header header">
+                <h1 class="text-xl font-bold">Продажи 2.0</h1>
+                <div class="gap-container hide md:flex">
+                    <span class="link" v-for="(link, key) in links" :key="key" @click="scrollToElementById(link.to)">
+                        {{ link.label }}
+                    </span>
                 </div>
-                <div>
-                    <a href='tel:+79869864306'>
-                        <m-btn v-touch-hold:300.mouse='copyPhoneNumber' label='+7 (986) 986-43-06' outline />
+                <div class="flex">
+                    <Socials class="hide md:flex" />
+                    <a href="tel:+79869864306">
+                        <m-btn v-touch-hold:300.mouse="copyPhoneNumber" label="+7 (986) 986-43-06" outline />
                     </a>
-                    <q-btn class='ml-small md:hide' flat round icon='menu'
-                           @click='drawerVisible = !drawerVisible' />
+                    <q-btn
+                        class="ml-small md:hide mr-[-10px]"
+                        flat
+                        round
+                        icon="menu"
+                        @click="drawerVisible = !drawerVisible"
+                    />
                 </div>
             </Container>
         </q-header>
 
-        <q-drawer v-model='drawerVisible' side='right' overlay>
-            <div class='py-[12px] px-5 flex justify-end'>
-                <a href='tel:+79869864306'>
-                    <m-btn v-touch-hold:300.mouse='copyPhoneNumber' label='+7 (986) 986-43-06' outline />
+        <q-drawer v-model="drawerVisible" side="right" overlay width="260">
+            <div class="py-3 pr-5 mr-[-10px] flex justify-end">
+                <a href="tel:+79869864306">
+                    <m-btn v-touch-hold:300.mouse="copyPhoneNumber" label="+7 (986) 986-43-06" outline />
                 </a>
-                <q-btn class='ml-small md:hide' flat round icon='menu'
-                       @click='drawerVisible = !drawerVisible' />
+                <q-btn class="ml-small md:hide" flat round icon="menu" @click="drawerVisible = !drawerVisible" />
             </div>
-            <q-list bordered separator>
-                <q-item clickable v-ripple v-for='(link, key) in links' :key='key'
-                        @click='scrollFromDrawer(link.to)'>
-                    <q-item-section>{{ link.label }}</q-item-section>
-                </q-item>
+            <div class="px-4 uppercase text-pre-dark font-light mt-4">Меню</div>
+            <q-list>
+                <div v-for="(link, key) in links" :key="key" v-ripple @click="scrollFromDrawer(link.to)">
+                    <q-separator v-if="key !== 0" spaced inset style="margin: -1px 16px 0 16px" />
+                    <q-item clickable>
+                        <q-item-section>{{ link.label }}</q-item-section>
+                    </q-item>
+                </div>
             </q-list>
+            <div class="px-4 uppercase text-pre-dark font-light mt-4">Контакты</div>
+            <Socials class="pl-[16px] mt-small" />
+            <q-space />
+            <div class="px-4 flex gap-default mt-small mb-default">
+                <m-btn label="Оставить заявку" icon-right="arrow_forward" full-width />
+                <m-btn label="Хочу презентацию" outline full-width />
+            </div>
         </q-drawer>
 
         <q-page-container>
             <slot />
         </q-page-container>
-
     </q-layout>
 </template>
 
-<script setup lang='ts'>
+<script setup lang="ts">
 import { nextTick, ref } from 'vue'
 import MBtn from '~/components/buttons/MBtn.vue'
 import { debounce } from 'lodash'
+import Socials from '~/components/utils/Socials.vue'
 
 const quasar = useQuasar()
 const drawerVisible = ref(false)
@@ -92,7 +106,7 @@ const links = [
 ]
 </script>
 
-<style lang='scss' scoped>
+<style lang="scss" scoped>
 .hide {
     display: none;
 }
@@ -120,5 +134,11 @@ const links = [
     &:hover {
         text-decoration: underline;
     }
+}
+
+:deep(.q-drawer__content) {
+    overflow-x: hidden;
+    display: flex;
+    flex-direction: column;
 }
 </style>

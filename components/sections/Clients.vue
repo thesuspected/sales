@@ -1,27 +1,29 @@
 <template>
-    <Section class='bg-light'>
+    <Section class="bg-light">
         <Container>
-            <div class='flex flex-col sm:flex-row w-full align-middle justify-between mb-default'>
-                <h2 class='unbounded text-5xl mb-default font-bold'>
-                    что думают<br>
-                    <span class='text-primary'>клиенты?</span>
+            <div class="flex flex-col sm:flex-row w-full align-middle justify-between mb-default">
+                <h2 class="unbounded text-5xl mb-default font-bold">
+                    что думают<br />
+                    <span class="text-primary">клиенты?</span>
                 </h2>
-                <span class='text-pre-dark sm:text-right'>
-                    Наши клиенты — это компании, которые<br> действительно хотят развиваться*<br> *Это главное условие успешного взаимодействия.
+                <span class="text-pre-dark sm:text-right">
+                    Наши клиенты — это компании, которые<br />
+                    действительно хотят развиваться*<br />
+                    *Это главное условие успешного взаимодействия.
                 </span>
             </div>
-            <div class='grid grid-cols-1 lg:grid-cols-3 gap-container'>
-                <div v-for='(card, key) in cards' :key='key' class='card bg-white shadow-default'>
-                    <img :src='card.img' alt='' />
-                    <h3 class='font-bold italic text-xl'>{{ card.title }}</h3>
-                    <p class='text-pre-dark card-text'>{{ card.text }}</p>
-                    <div class='flex flex-grow'>
-                        <div class='flex justify-between self-end w-full'>
-                            <div class='flex flex-col'>
-                                <span class='font-bold'>{{ card.fullname }}</span>
-                                <span class='text-secondary'>{{ card.position }}</span>
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-container">
+                <div v-for="(card, key) in cards" :key="key" class="card bg-white shadow-default">
+                    <img :src="card.img" alt="" />
+                    <h3 class="font-bold italic text-xl">{{ card.title }}</h3>
+                    <p class="text-pre-dark card-text">{{ card.text }}</p>
+                    <div class="flex flex-grow">
+                        <div class="flex justify-between self-end w-full">
+                            <div class="flex flex-col">
+                                <span class="font-bold">{{ card.fullname }}</span>
+                                <span class="text-secondary">{{ card.position }}</span>
                             </div>
-                            <div class='p-small unbounded bg-light rounded-default'>
+                            <div class="p-small unbounded bg-light rounded-default">
                                 {{ card.company }}
                             </div>
                         </div>
@@ -32,7 +34,7 @@
     </Section>
 </template>
 
-<script setup lang='ts'>
+<script setup lang="ts">
 import Section from '~/components/Section.vue'
 import Container from '~/components/Container.vue'
 
@@ -64,7 +66,7 @@ const cards = [
 ]
 </script>
 
-<style lang='scss' scoped>
+<style lang="scss" scoped>
 .card-text {
     display: -webkit-box;
     -webkit-line-clamp: 5;

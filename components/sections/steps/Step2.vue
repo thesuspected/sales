@@ -5,7 +5,7 @@
             <div class="grid grid-cols-1 md:grid-cols-3 gap-container flex-grow">
                 <div class="education-card card bg-white col-span-3 md:col-span-2 shadow-default">
                     <div class="flex flex-col gap-default education-card-inner flex-grow">
-                        <div class="flex items-center gap-default text-primary size-30px">
+                        <div class="flex items-center gap-default text-primary size-30px flex-nowrap">
                             <img src="~/assets/icons/step_edu.svg" alt="" />
                             Обучающая платформа
                         </div>

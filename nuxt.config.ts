@@ -1,31 +1,55 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
+    app: {
+        head: {
+            charset: 'utf-8',
+            viewport: 'width=device-width, initial-scale=1',
+            title: 'Sales Twice — Прокачка отдела продаж',
+            meta: [
+                {
+                    name: 'description',
+                    content:
+                        'Наша задача — прокачать отдел продаж, внедрив необходимые инструменты и передать собственнику бизнеса в виде готовых инструкций и рекомендаций.',
+                },
+            ],
+        },
+    },
     devtools: {
         enabled: true,
     },
-    modules: ['@nuxtjs/tailwindcss', ['@nuxtjs/google-fonts', {
-        families: {
-            Unbounded: '200..800',
-            'Inter Tight': '200..800',
-        },
-    }], ['nuxt-quasar-ui', {
-        config: {
-            brand: {
-                'primary': '#407BFF',
-                'primary-secondary': '#B3CAFF',
-                'secondary': '#ACB4C4',
-                'accent': '#E28B85',
-                'accent-secondary': '#F7CECB',
-                'dark': '#555A65',
-                'pre-dark': '#777D8B',
-                'light': '#F7F8FA',
-                'grey': '#D7DAE2',
-                'white': '#FFFFFF',
-                'black': '#2B2D33',
+    modules: [
+        '@nuxtjs/tailwindcss',
+        [
+            '@nuxtjs/google-fonts',
+            {
+                families: {
+                    Unbounded: '200..800',
+                    'Inter Tight': '200..800',
+                },
             },
-        },
-        plugins: ['Notify'],
-    }]],
+        ],
+        [
+            'nuxt-quasar-ui',
+            {
+                config: {
+                    brand: {
+                        primary: '#407BFF',
+                        'primary-secondary': '#B3CAFF',
+                        secondary: '#ACB4C4',
+                        accent: '#E28B85',
+                        'accent-secondary': '#F7CECB',
+                        dark: '#555A65',
+                        'pre-dark': '#777D8B',
+                        light: '#F7F8FA',
+                        grey: '#D7DAE2',
+                        white: '#FFFFFF',
+                        black: '#2B2D33',
+                    },
+                },
+                plugins: ['Notify'],
+            },
+        ],
+    ],
     css: ['~/assets/scss/main.scss'],
     postcss: {
         plugins: {
@@ -33,5 +57,4 @@ export default defineNuxtConfig({
             autoprefixer: {},
         },
     },
-
 })

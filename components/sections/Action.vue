@@ -14,9 +14,9 @@
                         >Оставьте заявку на бесплатную презентацию, на которой вы узнаете: как проходит обучение и каких
                         финансовых показателей вы достигнете.</span
                     >
-                    <div class="pt-default gap-default lg:gap-container grid grid-cols-1 lg:grid-cols-3">
+                    <div class="pt-default flex flex-col lg:grid grid-cols-3 gap-default">
                         <m-input v-model="form.phone" placeholder="+7 (987) 654-32-10" mask="+7 (###) ###-##-##" />
-                        <m-input v-model="form.name" placeholder="Ваше Имя" mask="+7 (###) ###-##-##" />
+                        <m-input v-model="form.name" placeholder="Ваше Имя" />
                         <m-btn label="Оставить заявку" full-width large @click="sendRequest" />
                     </div>
                 </div>

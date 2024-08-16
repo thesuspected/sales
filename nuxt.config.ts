@@ -20,6 +20,23 @@ export default defineNuxtConfig({
     modules: [
         '@nuxtjs/tailwindcss',
         [
+            'nuxt-yandex-metrika',
+            {
+                id: '98081717',
+                debug: true,
+                // debug: process.env.NODE_ENV !== 'production',
+                // delay: 0,
+                // cdn: false,
+                // verification: null, // Verification in Yandex Webmaster
+                options: {
+                    clickmap: true,
+                    trackLinks: true,
+                    accurateTrackBounce: true,
+                    webvisor: true,
+                },
+            },
+        ],
+        [
             '@nuxtjs/google-fonts',
             {
                 families: {

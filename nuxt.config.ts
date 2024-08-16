@@ -12,6 +12,12 @@ export default defineNuxtConfig({
                         'Наша задача — прокачать отдел продаж, внедрив необходимые инструменты и передать собственнику бизнеса в виде готовых инструкций и рекомендаций.',
                 },
             ],
+            script: [
+                {
+                    src: '//code.jivo.ru/widget/B7oBuLYXun',
+                    async: true,
+                },
+            ],
         },
     },
     devtools: {

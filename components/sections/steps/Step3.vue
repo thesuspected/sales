@@ -33,7 +33,7 @@
             <div class="bg-line" />
         </div>
         <div class="flex flex-col shadow-default rounded-default overflow-hidden">
-            <img src="~/assets/images/call2.png" alt="" class="object-cover" />
+            <img src="~/assets/images/call.png" alt="" class="object-cover" />
             <div class="rounded-default flex items-center flex-nowrap p-default gap-default bg-white">
                 <img src="/icons/team.svg" alt="" />
                 <span> Организуем онлайн встречу с разбором допущенных ошибок </span>

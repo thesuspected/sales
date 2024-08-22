@@ -2,7 +2,9 @@
     <q-layout view="hHh lpR fFf">
         <q-header reveal class="bg-light text-dark">
             <Container class="flex justify-between items-center header header">
-                <h1 class="text-xl font-bold unbounded">Sales Twice</h1>
+                <h1 class="text-xl font-bold unbounded cursor-pointer" @click="scrollToElementById('main')">
+                    Sales Twice
+                </h1>
                 <div class="gap-container hide md:flex">
                     <span class="link" v-for="(link, key) in links" :key="key" @click="scrollToElementById(link.to)">
                         {{ link.label }}
@@ -43,6 +45,10 @@
             <div class="px-4 uppercase text-pre-dark font-light mt-4">Контакты</div>
             <Socials class="pl-[16px] mt-small" />
             <q-space />
+            <div class="px-4">
+                Разработка сайта:
+                <a href="https://t.me/zuspect" class="link font-bold">zuspect</a>
+            </div>
             <div class="px-4 flex gap-default mt-small mb-default">
                 <m-btn label="Оставить заявку" icon-right="arrow_forward" full-width />
                 <m-btn label="Хочу презентацию" outline full-width />

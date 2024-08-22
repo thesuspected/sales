@@ -1,30 +1,30 @@
 <template>
     <q-btn
         unelevated
-        class='base-button'
-        :size='size'
+        class="base-button"
+        :size="size"
         :class="{
             'w-full': fullWidth,
             large: large,
             capitalize: capitalize,
         }"
-        :color='color'
-        :text-color='textColor'
-        :label='label'
-        :icon='icon'
-        :flat='flat'
-        :icon-right='iconRight'
-        :padding='padding'
-        :round='round'
-        :disable='disable'
-        :loading='loading'
+        :color="color"
+        :text-color="textColor"
+        :label="label"
+        :icon="icon"
+        :flat="flat"
+        :icon-right="iconRight"
+        :padding="padding"
+        :round="round"
+        :disable="disable"
+        :loading="loading"
         no-caps
     >
         <slot />
     </q-btn>
 </template>
 
-<script setup lang='ts'>
+<script setup lang="ts">
 const props = defineProps({
     label: {
         type: String,
@@ -73,7 +73,7 @@ const props = defineProps({
 })
 </script>
 
-<style lang='scss' scoped>
+<style lang="scss" scoped>
 .base-button {
     border-radius: 10px;
     font-size: 16px !important;

@@ -1,6 +1,6 @@
 <template>
     <Layout>
-        <Main />
+        <Main id="main" />
         <ForWho class="pt-container bg-white" />
         <Stats class="pb-container bg-white" id="numbers" />
         <Steps class="py-container" />

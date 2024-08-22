@@ -4,7 +4,7 @@
             <div class="flex flex-col">
                 <h1 class="text-2xl font-bold unbounded mb-small">Sales Twice</h1>
                 <div class="mb-default">
-                    Гарантировано увеличим продажи за три месяца обучения минимум на 17% за счет внедрения методов и
+                    Гарантировано увеличим продажи за три месяца обучения минимум на 20% за счет внедрения методов и
                     стратегий продаж.
                 </div>
                 <Socials />
@@ -42,7 +42,7 @@
                 <div class="flex justify-between pt-default">
                     <div>© 2024 "Sales Twice" — Продажи 2.0</div>
                     <div>
-                        Создание сайта:
+                        Разработка сайта:
                         <a href="https://t.me/zuspect" class="link font-bold">zuspect</a>
                     </div>
                 </div>

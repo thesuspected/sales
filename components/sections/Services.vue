@@ -19,9 +19,20 @@
                     протяжении трех месяцев, а также два тренинга по запросу на выбор:
                 </span>
                 <div class="flex gap-default mt-default flex-wrap mb-default">
-                    <div v-for="(training, key) in trainings" :key="key" class="training">
-                        {{ training }}
-                    </div>
+                    <m-btn
+                        v-for="(training, key) in trainings"
+                        :key="key"
+                        :label="training.title"
+                        outline
+                        color="pre-dark"
+                    >
+                        <q-popup-proxy>
+                            <div class="card bg-white" style="max-width: 400px">
+                                <span class="font-bold">{{ training.title }}</span>
+                                <span>{{ training.text }}</span>
+                            </div>
+                        </q-popup-proxy>
+                    </m-btn>
                 </div>
             </div>
             <div class="col-span-12 lg:col-span-7 grid grid-cols-1 lg:grid-cols-2 gap-container">
@@ -57,7 +68,20 @@ import Section from '~/components/Section.vue'
 import Container from '~/components/Container.vue'
 import MBtn from '~/components/buttons/MBtn.vue'
 
-const trainings = ['Личная эффективность', 'Командообразование', 'Эмоциональная разгрузка']
+const trainings = [
+    {
+        title: 'Личная эффективность',
+        text: 'Какими бы вы навыками продаж не обладали, денежный потолок упирается в ограничивающие установки, отсутствие уверенности, размытые цели и отсутствие четкого плана. На данном тренинге мы будем всесторонне прорабатывать свою личность, что в свою очередь очень быстро улучшит показатели, причем во всех областях.',
+    },
+    {
+        title: 'Командообразование',
+        text: 'В любой команде возникают споры, разногласия и конфликты. Рано или поздно, это может вспыхнуть в большое пламя. Чтобы этого не допустить существует тренинг по командообразованию, который способен создать не просто дружную команду, а команду мечты.',
+    },
+    {
+        title: 'Эмоциональная разгрузка',
+        text: 'Напряжение и стресс - это частые спутники в работе и если от них вовремя не избавиться, то может произойти выгорание, из которого выбраться довольно сложно. Благодаря тренингу можно избежать подобной ситуации и продолжить работать дальше в комфортном режиме.',
+    },
+]
 const cards = [
     {
         icon: '/icons/base.svg',

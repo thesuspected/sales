@@ -76,7 +76,7 @@ const months = [
     'декабрь',
 ]
 const month = new Date().getMonth()
-const monthKeys = [month % 11, (month + 1) % 11, (month + 2) % 11]
+const monthKeys = [(month + 1) % 11, (month + 2) % 11, (month + 3) % 11]
 const currentMonths = monthKeys.map((key) => months[key])
 </script>
 

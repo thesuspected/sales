@@ -16,6 +16,8 @@
             :hint="hint"
             :readonly="readonly"
             :disable="disabled"
+            :lazy-rules="lazyRules"
+            :rules="rules"
             :dense="dense"
             @update:model-value="updateModelValue"
         >
@@ -30,6 +32,9 @@
 </template>
 
 <script setup lang="ts">
+import type { PropType } from 'vue'
+import type { ValidationRule } from 'quasar'
+
 const props = defineProps({
     modelValue: {
         type: [String, Number],
@@ -91,6 +96,13 @@ const props = defineProps({
     dense: {
         type: Boolean,
     },
+    rules: {
+        type: Array as PropType<ValidationRule[]>,
+        default: undefined,
+    },
+    lazyRules: {
+        type: [Boolean, String] as PropType<Boolean | String>,
+    },
 })
 const emit = defineEmits(['update:model-value'])
 
@@ -128,5 +140,10 @@ const updateModelValue = (value?: string) => {
             }
         }
     }
+}
+</style>
+<style lang="scss">
+.q-field--error .q-field__bottom {
+    font-weight: bold;
 }
 </style>

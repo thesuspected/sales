@@ -1,121 +1,60 @@
 <template>
-    <q-dialog v-model='visible'>
-        <div class='dialog-card'>
+    <q-dialog v-model="visible">
+        <div class="dialog-card">
             <q-stepper
-                v-model='step'
-                ref='stepper'
-                color='primary'
-                header-class='font-medium'
+                v-model="step"
+                ref="stepper"
+                color="primary"
+                header-class="font-medium"
                 header-nav
                 animated
                 vertical
             >
-                <q-step
-                    :name='1'
-                    title='Сотрудники'
-                    :prefix='1'
-                    :done='step > 1'
-                >
-                    <div class='text-xl font-bold px-small'>
-                        Сколько человек в вашем отделе продаж?
-                    </div>
+                <q-step :name="1" title="Сотрудники" :prefix="1" :done="step > 1">
+                    <div class="text-xl font-bold px-small">Сколько человек в вашем отделе продаж?</div>
                     <q-slider
-                        v-model='form.employeeCount'
-                        :min='1'
-                        :max='40'
+                        v-model="form.employeeCount"
+                        :min="1"
+                        :max="40"
                         label
                         label-always
-                        class='mt-container px-small'
+                        class="mt-container px-small"
                     />
                 </q-step>
 
-                <q-step
-                    :name='2'
-                    title='Руководитель'
-                    :prefix='2'
-                    :done='!!form.rop'
-                >
-                    <div class='text-xl font-bold px-small'>
-                        Кто выполняет функцию руководителя отдела продаж?
-                    </div>
-                    <q-option-group
-                        :options='ropOptions'
-                        type='radio'
-                        v-model='form.rop'
-                        class='mt-small'
-                    />
+                <q-step :name="2" title="Руководитель" :prefix="2" :done="!!form.rop">
+                    <div class="text-xl font-bold px-small">Кто выполняет функцию руководителя отдела продаж?</div>
+                    <q-option-group :options="ropOptions" type="radio" v-model="form.rop" class="mt-small" />
                 </q-step>
 
-                <q-step
-                    :name='3'
-                    title='Документация'
-                    :prefix='3'
-                    :done='!!form.doc'
-                >
-                    <div class='text-xl font-bold px-small'>
-                        Есть ли необходимая документация отдела продаж?
-                        (схемы, модели, регламенты, инструкции, отчеты
+                <q-step :name="3" title="Документация" :prefix="3" :done="!!form.doc">
+                    <div class="text-xl font-bold px-small">
+                        Есть ли необходимая документация отдела продаж? (схемы, модели, регламенты, инструкции, отчеты
                         по продажам и т.п.)
                     </div>
-                    <q-option-group
-                        :options='docOptions'
-                        type='radio'
-                        v-model='form.doc'
-                        class='mt-small'
-                    />
+                    <q-option-group :options="docOptions" type="radio" v-model="form.doc" class="mt-small" />
                 </q-step>
 
-                <q-step
-                    :name='4'
-                    title='Аналитика'
-                    :prefix='4'
-                    :done='!!form.analytic'
-                >
-                    <div class='text-xl font-bold px-small'>
+                <q-step :name="4" title="Аналитика" :prefix="4" :done="!!form.analytic">
+                    <div class="text-xl font-bold px-small">
                         Ведется ли регулярная аналитика показателей звонков/продаж/переписок менеджеров?
                     </div>
-                    <q-option-group
-                        :options='analyticOptions'
-                        type='radio'
-                        v-model='form.analytic'
-                        class='mt-small'
-                    />
+                    <q-option-group :options="analyticOptions" type="radio" v-model="form.analytic" class="mt-small" />
                 </q-step>
 
-                <q-step
-                    :name='5'
-                    title='Система найма'
-                    :prefix='5'
-                    :done='!!form.system'
-                >
-                    <div class='text-xl font-bold px-small'>
-                        Есть ли система найма, адаптации, развития менеджеров
-                        по продажам и РОП?
+                <q-step :name="5" title="Система найма" :prefix="5" :done="!!form.system">
+                    <div class="text-xl font-bold px-small">
+                        Есть ли система найма, адаптации, развития менеджеров по продажам и РОП?
                     </div>
-                    <q-option-group
-                        :options='defaultOptions'
-                        type='radio'
-                        v-model='form.system'
-                        class='mt-small'
-                    />
+                    <q-option-group :options="defaultOptions" type="radio" v-model="form.system" class="mt-small" />
                 </q-step>
 
-                <q-step
-                    :name='6'
-                    title='Бизнес-процессы'
-                    :prefix='6'
-                    :done='!!form.business'
-                >
-                    <div class='text-xl font-bold px-small'>
+                <q-step :name="6" title="Бизнес-процессы" :prefix="6" :done="!!form.business">
+                    <div class="text-xl font-bold px-small">
                         Выстроены ли бизнес-процессы отдела продаж? (поиск клиентов, подключение к работе, удержание,
                         развитие)
                     </div>
-                    <q-option-group
-                        :options='businessOptions'
-                        type='radio'
-                        v-model='form.business'
-                        class='mt-small'
-                    />
+                    <q-option-group :options="businessOptions" type="radio" v-model="form.business" class="mt-small" />
                 </q-step>
 
                 <!--                <q-step-->
@@ -136,49 +75,39 @@
                 <!--                    />-->
                 <!--                </q-step>-->
 
-                <q-step
-                    :name='7'
-                    title='Товар/Услуга'
-                    :prefix='7'
-                    :done='!!form.business'
-                >
-                    <div class='text-xl font-bold px-small'>
-                        Какой товар или услугу продаете?
-                    </div>
+                <q-step :name="7" title="Товар/Услуга" :prefix="7" :done="!!form.business">
+                    <div class="text-xl font-bold px-small">Какой товар или услугу продаете?</div>
                     <q-input
-                        v-model='form.product'
+                        v-model="form.product"
                         filled
-                        class='mt-small px-small'
-                        placeholder='Введите товары/услуги'
+                        class="mt-small px-small"
+                        placeholder="Введите товары/услуги"
                     />
                 </q-step>
 
-                <q-step
-                    :name='8'
-                    title='Сайт'
-                    :prefix='8'
-                    :done='!!form.site'
-                >
-                    <div class='text-xl font-bold px-small'>
-                        Укажите ссылку на сайт компании (если есть)
-                    </div>
-                    <q-input
-                        v-model='form.site'
-                        filled
-                        class='mt-small px-small'
-                        placeholder='Вставьте ссылку'
-                    />
+                <q-step :name="8" title="Сайт" :prefix="8" :done="!!form.site">
+                    <div class="text-xl font-bold px-small">Укажите ссылку на сайт компании (если есть)</div>
+                    <q-input v-model="form.site" filled class="mt-small px-small" placeholder="Вставьте ссылку" />
                 </q-step>
 
                 <template v-slot:navigation>
-                    <q-stepper-navigation class='flex justify-between sticky bottom-0 bg-white nav'>
-                        <m-btn v-if='step > 1' outline color='primary' @click='$refs.stepper.previous()'
-                               label='Назад' />
+                    <q-stepper-navigation class="flex justify-between sticky bottom-0 bg-white nav">
+                        <m-btn
+                            v-if="step > 1"
+                            outline
+                            color="primary"
+                            @click="$refs.stepper.previous()"
+                            label="Назад"
+                        />
                         <q-space />
-                        <m-btn v-if='step < 8' @click='$refs.stepper.next()' color='primary'
-                               label='Далее' />
-                        <m-btn v-if='step === 8' @click='sendRequest' color='primary'
-                               label='Завершить' icon-right='check' />
+                        <m-btn v-if="step < 8" @click="$refs.stepper.next()" color="primary" label="Далее" />
+                        <m-btn
+                            v-if="step === 8"
+                            @click="sendRequest"
+                            color="primary"
+                            label="Завершить"
+                            icon-right="check"
+                        />
                     </q-stepper-navigation>
                 </template>
             </q-stepper>
@@ -186,13 +115,13 @@
     </q-dialog>
 </template>
 
-<script setup lang='ts'>
+<script setup lang="ts">
 import { ref } from 'vue'
 import MBtn from '~/components/buttons/MBtn.vue'
 import axios from 'axios'
 
 const stepper = ref()
-const visible = ref(false)
+const visible = ref(true)
 const step = ref(1)
 const form = ref({
     employeeCount: 20,
@@ -297,7 +226,7 @@ const sendRequest = async () => {
 }
 </script>
 
-<style lang='scss' scoped>
+<style lang="scss" scoped>
 .dialog-card {
     border-radius: 0.625rem;
 }

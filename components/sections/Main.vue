@@ -11,7 +11,7 @@
                         бизнеса в виде готовых инструкций и рекомендаций.
                     </p>
                     <div class="mt-default lg:mt-container flex gap-default lg:gap-container">
-                        <m-btn label="Оставить заявку" icon-right="arrow_forward" large />
+                        <m-btn label="Оставить заявку" icon-right="arrow_forward" shine-effect large />
                         <m-btn label="Записаться на презентацию" outline large />
                     </div>
                 </div>

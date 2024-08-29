@@ -14,11 +14,24 @@
                         >Оставьте заявку на бесплатную презентацию, на которой вы узнаете: как проходит обучение и каких
                         финансовых показателей вы достигнете.</span
                     >
-                    <div class="pt-default flex flex-col lg:grid grid-cols-3 gap-default">
-                        <m-input v-model="form.phone" placeholder="+7 (987) 654-32-10" mask="+7 (###) ###-##-##" />
-                        <m-input v-model="form.name" placeholder="Ваше Имя" />
-                        <m-btn label="Оставить заявку" full-width large @click="sendRequest" />
-                    </div>
+                    <q-form ref="formRef">
+                        <div class="pt-default flex flex-col lg:grid grid-cols-3 gap-default">
+                            <m-input
+                                v-model="form.phone"
+                                placeholder="+7 (987) 654-32-10"
+                                mask="+7 (###) ###-##-##"
+                                lazy-rules="ondemand"
+                                :rules="requiredRule"
+                            />
+                            <m-input
+                                v-model="form.name"
+                                placeholder="Ваше Имя"
+                                lazy-rules="ondemand"
+                                :rules="requiredRule"
+                            />
+                            <m-btn label="Оставить заявку" full-width large shine-effect @click="sendRequest" />
+                        </div>
+                    </q-form>
                 </div>
             </div>
         </Container>
@@ -32,19 +45,24 @@ import axios from 'axios'
 import MBtn from '~/components/buttons/MBtn.vue'
 import MInput from '~/components/form/MInput.vue'
 
+const formRef = ref<HTMLFormElement | null>(null)
 const form = ref({
     phone: undefined,
     name: undefined,
 })
 
+const requiredRule = [(val: string) => !!val || 'Обязательное поле']
+
 const sendRequest = async () => {
-    if (form.value.phone) {
-        await axios.post(`https://api.telegram.org/bot7193498527:AAFn9sfVKICmnpR85Z8cTuxsI0PVEKDpwig/sendMessage`, {
-            chat_id: -4230699745,
-            text: `Новая заявка на сайте: ${form.value.name}, ${form.value.phone}`,
-            parse_mode: 'HTML',
-        })
-    }
+    formRef.value?.validate().then(async (success: boolean) => {
+        if (success) {
+            await axios.post(`https://api.telegram.org/bot7193498527:AAFn9sfVKICmnpR85Z8cTuxsI0PVEKDpwig/sendMessage`, {
+                chat_id: -4230699745,
+                text: `Новая заявка на сайте: ${form.value.name}, ${form.value.phone}`,
+                parse_mode: 'HTML',
+            })
+        }
+    })
 }
 </script>
 

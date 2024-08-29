@@ -44,6 +44,7 @@
                 class="shadow-default"
                 icon-right="arrow_forward"
                 full-width
+                shine-effect
                 large
             />
         </div>

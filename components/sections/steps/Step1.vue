@@ -25,6 +25,7 @@
                     text-color="primary"
                     full-width
                     large
+                    @click="clickLeaveRequest"
                 />
             </div>
         </div>
@@ -49,6 +50,11 @@
 import MBtn from '~/components/buttons/MBtn.vue'
 
 const chips = ['8 часов', '19 тем', 'Теория', 'Практика']
+
+const emit = defineEmits(['click-leave-request'])
+const clickLeaveRequest = () => {
+    emit('click-leave-request', 'Шаг 1, кнопка "Оставить заявку на тренинг"')
+}
 
 const sellMethodsModel = ref(0)
 const sellMethodsItems = ref([

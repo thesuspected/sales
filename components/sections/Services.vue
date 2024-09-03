@@ -56,7 +56,13 @@
                         </div>
                     </div>
                     <span class="h-[24px] text-center text-primary font-bold mb-small">{{ card.aboveButton }}</span>
-                    <m-btn label="Оставить заявку" icon-right="arrow_forward" full-width large />
+                    <m-btn
+                        label="Оставить заявку"
+                        icon-right="arrow_forward"
+                        full-width
+                        large
+                        @click="clickLeaveRequest(card.title)"
+                    />
                 </div>
             </div>
         </Container>
@@ -67,6 +73,11 @@
 import Section from '~/components/Section.vue'
 import Container from '~/components/Container.vue'
 import MBtn from '~/components/buttons/MBtn.vue'
+
+const emit = defineEmits(['click-leave-request'])
+const clickLeaveRequest = (title: string) => {
+    emit('click-leave-request', `Пакеты услуг, ${title}, кнопка "Оставить заявку"`)
+}
 
 const trainings = [
     {

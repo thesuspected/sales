@@ -5,7 +5,7 @@
             :model-value="modelValue"
             outlined
             class="form-input"
-            :class="{ textarea: textarea }"
+            :class="{ textarea: textarea, 'without-border': withoutBorder }"
             :input-style="fontSize ? `font-size: ${fontSize}` : undefined"
             :placeholder="placeholder"
             :autogrow="autogrow"
@@ -103,6 +103,10 @@ const props = defineProps({
     lazyRules: {
         type: [Boolean, String] as PropType<Boolean | String>,
     },
+    withoutBorder: {
+        type: Boolean,
+        default: true,
+    },
 })
 const emit = defineEmits(['update:model-value'])
 
@@ -134,7 +138,11 @@ const updateModelValue = (value?: string) => {
             border-radius: 10px;
             background: white;
             font-size: 16px;
+        }
+    }
 
+    .without-border {
+        &:deep(.q-field__control) {
             &:before {
                 border: none;
             }

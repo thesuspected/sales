@@ -11,8 +11,8 @@
                     Для этого существует понятный план действий
                 </span>
             </div>
-            <Step1 />
-            <Step2 class="mt-section" />
+            <Step1 @click-leave-request="clickLeaveRequest" />
+            <Step2 class="mt-section" @click-leave-request="clickLeaveRequest" />
             <Step3 />
         </Container>
     </Section>
@@ -26,6 +26,11 @@ import Step2 from '~/components/sections/steps/Step2.vue'
 import Step3 from '~/components/sections/steps/Step3.vue'
 
 const quasar = useQuasar()
+
+const emit = defineEmits(['click-leave-request'])
+const clickLeaveRequest = (from: string) => {
+    emit('click-leave-request', from)
+}
 </script>
 
 <style lang="scss" scoped>

@@ -11,7 +11,13 @@
                         бизнеса в виде готовых инструкций и рекомендаций.
                     </p>
                     <div class="mt-default lg:mt-container flex gap-default lg:gap-container">
-                        <m-btn label="Оставить заявку" icon-right="arrow_forward" shine-effect large />
+                        <m-btn
+                            label="Оставить заявку"
+                            icon-right="arrow_forward"
+                            shine-effect
+                            large
+                            @click="clickLeaveRequest"
+                        />
                         <m-btn label="Записаться на презентацию" outline large />
                     </div>
                 </div>
@@ -30,6 +36,11 @@
 import Container from '~/components/Container.vue'
 import Section from '~/components/Section.vue'
 import MBtn from '~/components/buttons/MBtn.vue'
+
+const emit = defineEmits(['click-leave-request'])
+const clickLeaveRequest = () => {
+    emit('click-leave-request', 'Приветственный блок, кнопка "Оставить заявку"')
+}
 </script>
 
 <style lang="scss" scoped>

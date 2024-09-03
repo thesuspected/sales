@@ -46,6 +46,7 @@
                 full-width
                 shine-effect
                 large
+                @click="clickLeaveRequest"
             />
         </div>
     </div>
@@ -53,6 +54,11 @@
 
 <script setup lang="ts">
 import MBtn from '~/components/buttons/MBtn.vue'
+
+const emit = defineEmits(['click-leave-request'])
+const clickLeaveRequest = () => {
+    emit('click-leave-request', 'Шаг 2, кнопка "Оставить заявку на тренинг"')
+}
 
 const educationAdvantages = [
     'Обучение на платформе',

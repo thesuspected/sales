@@ -1,5 +1,5 @@
 <template>
-    <q-dialog :model-value="modelValue" @hide="closeDialog">
+    <q-dialog :model-value="modelValue" @hide="closeDialog" transition-show="jump-up" transition-hide="jump-down">
         <q-card class="dialog-card p-default shadow-lg">
             <q-card-section class="flex flex-col align-middle q-pb-none">
                 <img src="/svg/congrats.svg" alt="" class="card-illustration mb-small" />

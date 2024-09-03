@@ -1,5 +1,5 @@
 <template>
-    <q-dialog :model-value="modelValue" @hide="closeDialog">
+    <q-dialog :model-value="modelValue" @hide="closeDialog" transition-show="jump-up" transition-hide="jump-down">
         <q-card class="dialog-card p-small shadow-lg">
             <q-card-section class="row items-center q-pb-none">
                 <div class="text-h6 font-bold text-black unbounded title-text">Оставьте&nbsp;заявку на&nbsp;услуги</div>

@@ -18,7 +18,7 @@
                             large
                             @click="clickLeaveRequest"
                         />
-                        <m-btn label="Записаться на презентацию" outline large />
+                        <m-btn label="Записаться на презентацию" outline large @click="clickLeavePresentation" />
                     </div>
                 </div>
                 <!--                <img class='justify-self-center w-full lg:px-container' src='/svg/main-picture.svg' alt=''>-->
@@ -37,9 +37,12 @@ import Container from '~/components/Container.vue'
 import Section from '~/components/Section.vue'
 import MBtn from '~/components/buttons/MBtn.vue'
 
-const emit = defineEmits(['click-leave-request'])
+const emit = defineEmits(['click-leave-request', 'click-leave-presentation'])
 const clickLeaveRequest = () => {
     emit('click-leave-request', 'Приветственный блок, кнопка "Оставить заявку"')
+}
+const clickLeavePresentation = () => {
+    emit('click-leave-presentation', 'Приветственный блок, кнопка "Записаться на презентацию"')
 }
 </script>
 

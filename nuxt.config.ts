@@ -78,7 +78,7 @@ export default defineNuxtConfig({
         ],
     ],
 
-    css: ['~/assets/scss/main.scss'],
+    css: ['~/assets/scss/main.scss', 'animate.css/animate.min.css'],
 
     postcss: {
         plugins: {

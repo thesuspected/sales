@@ -16,7 +16,15 @@
             :without-border="false"
             :rules="requiredRule"
         />
-        <m-btn label="Отправить" full-width large @click="sendRequest" />
+        <m-btn full-width large :loading="isLoading" @click="sendRequest">
+            <q-icon
+                v-if="isComplete"
+                name="check"
+                size="30px"
+                class="animate__animated animate__zoomIn animate__fast"
+            />
+            <span v-else>Отправить</span>
+        </m-btn>
     </q-form>
 </template>
 
@@ -24,6 +32,7 @@
 import MBtn from '~/components/buttons/MBtn.vue'
 import MInput from '~/components/form/MInput.vue'
 import axios from 'axios'
+import { timeout } from '~/utils/utils'
 
 const props = defineProps({
     source: {
@@ -32,6 +41,8 @@ const props = defineProps({
 })
 const emit = defineEmits(['send-request'])
 
+const isComplete = ref(false)
+const isLoading = ref(false)
 const formRef = ref<HTMLFormElement | null>(null)
 const form = ref({
     phone: undefined,
@@ -43,11 +54,15 @@ const requiredRule = [(val: string) => !!val || '']
 const sendRequest = async () => {
     formRef.value?.validate().then(async (success: boolean) => {
         if (success) {
+            isLoading.value = true
             await axios.post(`https://api.telegram.org/bot7193498527:AAFn9sfVKICmnpR85Z8cTuxsI0PVEKDpwig/sendMessage`, {
                 chat_id: -4230699745,
                 text: `Новая заявка на сайте: ${form.value.name}, ${form.value.phone}\nИсточник: ${props.source}`,
                 parse_mode: 'HTML',
             })
+            await timeout(300)
+            isLoading.value = false
+            isComplete.value = true
             // TODO: Записать данные в localStorage
             emit('send-request')
         }

@@ -47,6 +47,7 @@ const clickLeavePresentation = (from: string) => {
 const onSendRequest = async () => {
     await timeout(800)
     isRequestDialogVisible.value = false
+    isPresentationDialogVisible.value = false
     await timeout(300)
     isThanksDialogVisible.value = true
 }

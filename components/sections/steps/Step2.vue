@@ -38,7 +38,7 @@
             </div>
         </div>
         <div class="mockup">
-            <img class="image" src="~/assets/images/mockup.png" alt="" />
+            <img class="image" src="~/assets/images/mockup2.png" alt="" />
             <m-btn
                 label="Оставить заявку на тренинг"
                 class="shadow-default"
@@ -125,8 +125,9 @@ const currentMonths = monthKeys.map((key) => months[key])
     }
 
     &-hr {
-        @apply w-full h-3 bg-accent-secondary rounded-default;
+        @apply w-full h-3 rounded-default;
         position: absolute;
+        background: #74d2c8;
         z-index: 1;
         bottom: 10px;
         width: calc(100% - 40px);

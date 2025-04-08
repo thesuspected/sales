@@ -6,7 +6,7 @@
         <Steps class="py-container" @click-leave-request="clickLeaveRequest" />
         <Services class="py-container" id="price" @click-leave-request="clickLeaveRequest" />
         <Clients class="pt-container" id="clients" />
-        <Team id="team" />
+        <!--        <Team id="team" />-->
         <Action id="contacts" />
         <Questions />
         <Footer class="mt-container" />
@@ -21,7 +21,6 @@ import Stats from '~/components/sections/Stats.vue'
 import Steps from '~/components/sections/Steps.vue'
 import Services from '~/components/sections/Services.vue'
 import Clients from '~/components/sections/Clients.vue'
-import Team from '~/components/sections/Team.vue'
 import Action from '~/components/sections/Action.vue'
 import Questions from '~/components/sections/Questions.vue'
 import Main from '~/components/sections/Main.vue'

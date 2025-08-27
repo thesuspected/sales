@@ -30,7 +30,7 @@ export default defineNuxtConfig({
         [
             'nuxt-yandex-metrika',
             {
-                id: '98081717',
+                id: '103914519',
                 debug: true,
                 // debug: process.env.NODE_ENV !== 'production',
                 // delay: 0,

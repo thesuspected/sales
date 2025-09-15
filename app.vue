@@ -1,19 +1,19 @@
 <template>
-    <!--    <Layout>-->
-    <!--        <Main id="main" @click-leave-request="clickLeaveRequest" @click-leave-presentation="clickLeavePresentation" />-->
-    <!--        <ForWho class="pt-container bg-white" />-->
-    <!--        <Stats class="pb-container bg-white" id="numbers" />-->
-    <!--        <Steps class="py-container" @click-leave-request="clickLeaveRequest" />-->
-    <!--        <Services class="py-container" id="price" @click-leave-request="clickLeaveRequest" />-->
-    <!--        <Clients class="pt-container" id="clients" />-->
-    <!--        &lt;!&ndash;        <Team id="team" />&ndash;&gt;-->
-    <!--        <Action id="contacts" />-->
-    <!--        <Questions />-->
-    <!--        <Footer class="mt-container" />-->
-    <!--        <RequestFormDialog v-model="isRequestDialogVisible" :source="source" @send-request="onSendRequest" />-->
-    <!--        <ThanksDialog v-model="isThanksDialogVisible" />-->
-    <!--        <PresentationDIalog v-model="isPresentationDialogVisible" :source="source" @send-request="onSendRequest" />-->
-    <!--    </Layout>-->
+    <Layout>
+        <Main id="main" @click-leave-request="clickLeaveRequest" @click-leave-presentation="clickLeavePresentation" />
+        <ForWho class="pt-container bg-white" />
+        <Stats class="pb-container bg-white" id="numbers" />
+        <Steps class="py-container" @click-leave-request="clickLeaveRequest" />
+        <Services class="py-container" id="price" @click-leave-request="clickLeaveRequest" />
+        <Clients class="pt-container" id="clients" />
+        <!--        <Team id="team" />-->
+        <Action id="contacts" />
+        <Questions />
+        <Footer class="mt-container" />
+        <RequestFormDialog v-model="isRequestDialogVisible" :source="source" @send-request="onSendRequest" />
+        <ThanksDialog v-model="isThanksDialogVisible" />
+        <PresentationDIalog v-model="isPresentationDialogVisible" :source="source" @send-request="onSendRequest" />
+    </Layout>
 </template>
 <script setup lang="ts">
 import ForWho from '~/components/sections/ForWho.vue'

@@ -51,11 +51,12 @@ const form = ref({
 
 const requiredRule = [(val: string) => !!val || '']
 
+const { NUXT_BOT_TOKEN } = process.env
 const sendRequest = async () => {
     formRef.value?.validate().then(async (success: boolean) => {
         if (success) {
             isLoading.value = true
-            await axios.post(`https://api.telegram.org/bot7193498527:AAFn9sfVKICmnpR85Z8cTuxsI0PVEKDpwig/sendMessage`, {
+            await axios.post(`https://api.telegram.org/${NUXT_BOT_TOKEN}/sendMessage`, {
                 chat_id: -4230699745,
                 text: `Новая заявка на сайте: ${form.value.name}, ${form.value.phone}\nИсточник: ${props.source}`,
                 parse_mode: 'HTML',

@@ -210,6 +210,7 @@ const defaultOptions = [
     },
 ]
 
+const { NUXT_BOT_TOKEN } = process.env
 const sendRequest = async () => {
     if (form.value) {
         const formArray = Object.entries(form.value)
@@ -217,7 +218,7 @@ const sendRequest = async () => {
         formArray.forEach((item, key) => {
             text += `${key + 1}. ${item[1] ?? '-'}\n`
         })
-        await axios.post(`https://api.telegram.org/bot7193498527:AAFn9sfVKICmnpR85Z8cTuxsI0PVEKDpwig/sendMessage`, {
+        await axios.post(`https://api.telegram.org/${NUXT_BOT_TOKEN}/sendMessage`, {
             chat_id: -4230699745,
             text,
             parse_mode: 'HTML',
